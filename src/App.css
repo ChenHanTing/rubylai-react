@@ -1,8 +1,5 @@
 .App {
   text-align: center;
-  /* 首頁最高: 一個屏幕高 */
-  max-height: 100vh;
-  overflow: hidden;
 }
 
 .App-logo {

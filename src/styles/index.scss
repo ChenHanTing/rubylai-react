@@ -1,6 +1,12 @@
 @font-face {
-  font-family: 'futura-pt';
-  src: url('../fonts/Futura/FuturaPTBook.otf') format("opentype");
+  font-family: "futura-pt";
+  src: url("../fonts/Futura/FuturaPTBook.otf") format("opentype");
+}
+
+.Home {
+  /* 首頁最高: 一個屏幕高 */
+  max-height: 100vh;
+  overflow: hidden;
 }
 
 .slick-img {
@@ -19,8 +25,8 @@
   height: 100vh;
   transform: translateY(-100vh);
   h1 {
-    font-size: 1.50rem;
-    padding-top: 20px;
+    font-size: 1.5rem;
+    padding-top: 40px;
     letter-spacing: 3px;
     color: rgb(245, 234, 234);
   }
@@ -28,7 +34,7 @@
     display: flex;
     justify-content: center;
 
-    font-family: 'futura-pt', serif;
+    font-family: "futura-pt", serif;
     font-weight: 400;
     font-size: 1rem;
     letter-spacing: 2px;
@@ -44,7 +50,7 @@
       color: white;
       &:hover {
         cursor: pointer;
-        color: rgba(255,255,255,.6);
+        color: rgba(255, 255, 255, 0.6);
       }
     }
   }
@@ -61,7 +67,7 @@
   }
 
   .social-media {
-    fill: rgba(34,34,34,0);
+    fill: rgba(34, 34, 34, 0);
   }
 
   .icon {
@@ -73,7 +79,7 @@
     background-color: white;
     &:hover {
       cursor: pointer;
-      background-color: rgba(255,255,255,.6);
+      background-color: rgba(255, 255, 255, 0.6);
     }
   }
 
