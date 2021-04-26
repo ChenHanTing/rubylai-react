@@ -1,0 +1,19 @@
+.custom-nav {
+  display: flex;
+  padding: 10px 20px;
+  border-bottom: black 1px solid;
+
+  .nav-logo {
+    margin-right: auto;
+    padding: 10px;
+  }
+
+  .nav-items {
+    display: flex;
+
+    .item {
+      padding: 10px;
+    }
+  }
+}
+
