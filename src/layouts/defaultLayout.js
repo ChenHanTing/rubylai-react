@@ -18,11 +18,14 @@ const DefaultLayout = ({ children, ...rest }) => {
           <div className="nav-logo">
             YUYEN LAI
           </div>
-          <div className="nav-items">
+          <div className="d-none d-lg-flex nav-items">
             {navItem.map(item =>
               <div className='item'>
                 <a href={item.link}>{item.name}</a>
               </div>)}
+          </div>
+          <div className="d-lg-none nav-items-mobile">
+            <i className="fas fa-bars"></i>
           </div>
         </nav>
         <article>{children}</article>

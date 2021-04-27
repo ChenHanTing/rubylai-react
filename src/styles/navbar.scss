@@ -1,18 +1,47 @@
+@font-face {
+  font-family: "Botanika";
+  src: url("../fonts/Mono/Botanika Mono Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Chivo";
+  src: url("../fonts/Chivo/Chivo-Regular.ttf") format("opentype");
+}
+
 .custom-nav {
   display: flex;
-  padding: 10px 20px;
+  padding: 40px 20px 10px;
   border-bottom: black 1px solid;
 
   .nav-logo {
+    padding: 6px 10px 10px;
+    font-weight: 600;
+    font-size: 1.6rem;
     margin-right: auto;
-    padding: 10px;
+    letter-spacing: 4px;
+    font-family: "Botanika", serif;
   }
 
   .nav-items {
-    display: flex;
+    font-size: 1rem;
+    font-family: "Chivo", serif;
 
     .item {
       padding: 10px;
+      a {
+        /**
+         * 全部大寫: uppercase,
+         * 第1個字大寫: capitalize
+         */
+        text-transform: uppercase;
+
+        color: var(--text-color);
+        text-decoration: none;
+
+        &:hover {
+          color: var(--black);
+        }
+      }
     }
   }
 }
