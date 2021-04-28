@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  /*= 讓 footer 黏在底部 =*/
+  height: 100vh;
 }
 
 .App-logo {

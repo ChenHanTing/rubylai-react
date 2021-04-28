@@ -1,5 +1,6 @@
 import { Route } from 'react-router-dom';
 import 'styles/navbar.scss';
+import 'styles/footer.scss';
 
 const navItem = [
   { name: 'home', link: '/' },
@@ -8,6 +9,16 @@ const navItem = [
   { name: 'love song', link: '/song' },
   { name: 'permit me voyage', link: '/voyage' },
   { name: 'commissioned', link: '/commissioned' },
+]
+
+const socialIcon = [
+  { icon: 'fab fa-facebook', link: '#' },
+  { icon: 'fab fa-twitter', link: '#' },
+  { icon: 'fab fa-google-plus', link: '#' },
+  { icon: 'fab fa-youtube', link: '#' },
+  { icon: 'fab fa-linkedin', link: '#' },
+  { icon: 'fab fa-instagram', link: 'http://instagram.com/rubyfiber_noir' },
+  { icon: 'far fa-envelope', link: 'mailto:rubyfiber@gmail.com' },
 ]
 
 const DefaultLayout = ({ children, ...rest }) => {
@@ -31,7 +42,21 @@ const DefaultLayout = ({ children, ...rest }) => {
         <article>{children}</article>
       </section>
       <footer>
-        <p>Footer</p>
+        <div className="footer-content">
+          <h3>Ruby Lai</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          <ul className="socials">
+            {socialIcon.map(social =>
+              <li>
+                <a href={social.link}>
+                  <i className={social.icon}></i>
+                </a>
+              </li>)}
+          </ul>
+        </div>
+        <div className="footer-bottom">
+          <p>copyright © 2021 sweatNonstop.</p>
+        </div>
       </footer>
     </>
   );
