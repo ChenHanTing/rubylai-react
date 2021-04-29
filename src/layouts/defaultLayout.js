@@ -1,4 +1,6 @@
+import { useRef, useLayoutEffect, useEffect } from 'react';
 import { Route } from 'react-router-dom';
+
 import 'styles/navbar.scss';
 import 'styles/footer.scss';
 
@@ -22,10 +24,32 @@ const socialIcon = [
 ]
 
 const DefaultLayout = ({ children, ...rest }) => {
+  const navRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const handleScroll = () => {
+      // 導覽列的距離
+      const navPosition = navRef.current.getBoundingClientRect().top
+      // 滾輪距離 (目前用不到)
+      const scrollPosition = window.scrollY + window.innerHeight
+
+      console.log('scrollPosition:', window.scrollY);
+
+      if(window.scrollY > 20) {
+        navRef.current.classList.add('sticky');
+      } else {
+        navRef.current.classList.remove('sticky');
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <>
       <section>
-        <nav className='custom-nav'>
+        <nav className='custom-nav shadow rounded' ref={navRef}>
           <div className="nav-logo">
             YUYEN LAI
           </div>

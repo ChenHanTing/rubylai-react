@@ -25,6 +25,7 @@ const indexBar = [
   { name: 'FINE ART', link: 'http://www.yuyenlai.com/fineart' },
   { name: 'COMMSSIONED', link: 'http://www.yuyenlai.com/work-1' },
   { name: 'PREWEDDING', link: 'http://www.yuyenlai.com/wedding' },
+  { name: 'ABOUT', link: '/about' },
 ]
 
 const socialMedia = [
