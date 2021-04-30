@@ -1,5 +1,6 @@
-import { useRef, useLayoutEffect, useEffect } from 'react';
+import { useRef, useLayoutEffect, useState } from 'react';
 import { Route } from 'react-router-dom';
+import Dropdown from './dropdown';
 
 import 'styles/navbar.scss';
 import 'styles/footer.scss';
@@ -24,7 +25,13 @@ const socialIcon = [
 ]
 
 const DefaultLayout = ({ children, ...rest }) => {
+  // 導覽列scroll dom
   const navRef = useRef(null);
+  // 下拉式選單點擊
+  const [dropdown, setDropdown] = useState(false);
+  const handleNavClick = () => {
+    setDropdown(!dropdown);
+  }
 
   useLayoutEffect(() => {
     const handleScroll = () => {
@@ -53,14 +60,17 @@ const DefaultLayout = ({ children, ...rest }) => {
           <div className="nav-logo">
             YUYEN LAI
           </div>
+          {/* 電腦版 */}
           <div className="d-none d-lg-flex nav-items">
             {navItem.map(item =>
               <div className='item'>
                 <a href={item.link}>{item.name}</a>
               </div>)}
           </div>
+          {/* 手機版 */}
           <div className="d-lg-none nav-items-mobile">
             <i className="fas fa-bars"></i>
+            {/*<Dropdown childrenItems={navItem} />*/}
           </div>
         </nav>
         <article>{children}</article>

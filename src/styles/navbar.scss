@@ -47,7 +47,7 @@
 nav {
   z-index: 10;
   transition: 0.5s;
-  padding: 40px 20px 10px;
+  padding: 60px 20px 10px;
   /**
    * 目前使用bootstrap shadow，就不用寫樣式
    * 參考網站: https://getbootstrap.com/docs/4.1/utilities/shadows/
@@ -60,8 +60,13 @@ nav.sticky {
   background: var(--white);
   padding: 20px 20px 10px;
   position: sticky;
+  transition: 0.5s;
   top: 0;
   left: 0;
-  transition: 0.5s;
+}
+
+.nav-items-mobile {
+  margin-top: 10px;
+  cursor: pointer;
 }
 

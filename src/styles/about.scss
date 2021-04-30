@@ -1,0 +1,53 @@
+.About {
+  display: flex;
+
+  .about-img {
+    width: 50%;
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .about-desc {
+    max-height: 100%;
+    padding: 0 80px;
+
+    .author {
+      margin-top: 20%;
+      font-size: 1.7rem;
+    }
+
+    p {
+      margin: 40px 0;
+      text-align: left;
+      font-size: 1.1rem;
+      letter-spacing: 3px;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .About {
+    display: block;
+
+    .about-img {
+      width: 100%;
+    }
+
+    .about-desc {
+      p:last-child {
+        margin-bottom: 100px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1070px) {
+  .About {
+    .about-desc {
+      padding: 0 0px;
+      margin: 0 50px;
+    }
+  }
+}
