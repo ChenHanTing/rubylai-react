@@ -66,7 +66,51 @@ nav.sticky {
 }
 
 .nav-items-mobile {
-  margin-top: 10px;
   cursor: pointer;
+  margin-top: 10px;
+  /* 為了 custom-dropdown-menu */
+  position: relative;
+
+  .fas {
+    font-size: 1.45rem;
+  }
 }
 
+/* 側邊欄下拉式選單 */
+.custom-dropdown-menu {
+  position: fixed;
+  background: white;
+  top: 122px;
+  right: 0;
+  transition: 0.5s;
+  /* 長寬 */
+  height: 100vh;
+  width: 100vw;
+}
+
+
+ul.custom-dropdown-menu {
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    margin: 20px;
+
+    a {
+      text-decoration: none;
+      text-align: center;
+      color: black;
+      font-size: 1.5rem;
+      font-family: 'Chivo';
+      letter-spacing: 1px;
+
+      &:hover {
+        color: var(--brown-grey);
+      }
+    }
+
+    &:first-child {
+      margin-top: 90px;
+    }
+  }
+}
