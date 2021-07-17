@@ -1,0 +1,47 @@
+/*====== 瀑布流: https://youtu.be/olvMjNUPFtI               =======*/
+/*====== 使用mixin: https://codepen.io/AlecWang/pen/oNvKWKZ =======*/
+
+@import "~styles/mixins/global-variable.scss";
+
+.masonry-column-counter {
+  @include pc {
+    column-count: var(--column-count);
+  }
+  @include pad {
+    column-count: var(--column-count);
+  }
+  @include small-pad {
+    column-count: var(--column-count);
+  }
+  @include phone {
+    column-count: 1;
+  }
+  column-gap: 0;
+
+  .item {
+    padding: 0 20px 20px 20px;
+    position: relative;
+    counter-increment: item-counter;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /*======== 編號 ========*/
+    // &::after {
+    //   position: absolute;
+    //   display: block;
+    //   top: 2px;
+    //   left: 2px;
+    //   width: 24px;
+    //   height: 24px;
+    //   text-align: center;
+    //   line-height: 24px;
+    //   background-color: #000;
+    //   color: #fff;
+    //   content: counter(item-counter);
+    // }
+  }
+}

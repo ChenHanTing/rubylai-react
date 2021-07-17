@@ -55,3 +55,84 @@
   --link-contrast: rgba(36, 44, 63, 0.2);
   --code-border-color: rgba(253, 253, 253, 0);
 }
+
+/**
+ * container width
+ */
+$container-width-xl: 1272px;
+$container-width-lg: 960px;
+$container-width-md: 768px;
+$container-width-sm: 540px;
+$container-width-default: 100%;
+
+/**
+ * common
+ */
+$bootstrap-default-padding: 15px;
+
+/*====== breakpoints ======*/
+$grid-breakpoints-sm: 576px;
+$grid-breakpoints-md: 768px;
+$grid-breakpoints-lg: 992px;
+$grid-breakpoints-xl: 1280px;
+
+@mixin mediaMax($size) {
+  @media (max-width: #{$size - 1px}) { @content; }
+}
+@mixin mediaMin($size) {
+  @media (min-width: $size ) { @content; }
+}
+
+$breakpointNextSize: (
+        $grid-breakpoints-sm: $grid-breakpoints-md,
+        $grid-breakpoints-md: $grid-breakpoints-lg,
+        $grid-breakpoints-lg: $grid-breakpoints-xl
+);
+
+@function getBreakpointUpperBound($size) {
+  $max: map-get($breakpointNextSize, $size);
+  @if $max {
+    @return $max - 1px;
+  }
+  @return $max;
+};
+
+@mixin mediaIs($size) {
+  $maxSize: getBreakpointUpperBound($size);
+  @if $maxSize {
+    @media (min-width: $size) and (max-width: $maxSize) { @content; }
+  }
+  @else {
+    @media (min-width: $size) { @content; }
+  }
+}
+
+// media range min to (max -1px)
+@mixin mediaRange($minSize, $maxSize) {
+  @media screen and (min-width: $minSize) and (max-width: $maxSize - 1px) { @content; }
+}
+
+/*====== 電腦 ======*/
+@mixin pc {
+  @media screen and (min-width: $grid-breakpoints-lg) {
+    @content;
+  }
+}
+/*====== 平板 ======*/
+@mixin pad {
+  @media screen and (min-width:$grid-breakpoints-md) and (max-width: $grid-breakpoints-lg - 1px) {
+    @content;
+  }
+}
+/*====== 小平板 ======*/
+@mixin small-pad {
+  @media screen and (min-width: $grid-breakpoints-sm) and (max-width: $grid-breakpoints-md - 1px) {
+    @content;
+  }
+}
+/*===== 手機 ======*/
+@mixin phone {
+  @media screen and (max-width: $grid-breakpoints-sm) {
+    @content;
+  }
+}

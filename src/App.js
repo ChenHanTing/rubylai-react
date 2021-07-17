@@ -4,6 +4,7 @@ import DefaultLayoutRoute from 'layouts/defaultLayout';
 
 import Home from 'components/home'
 import About from 'components/about'
+import Voyage from 'pages/voyage'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <DefaultLayoutRoute path="/about" component={About} />
+          <DefaultLayoutRoute path="/voyage" component={Voyage} />
           <Route path="/" component={Home} />
           <Redirect to="/" />
         </Switch>
